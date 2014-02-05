@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="../../TN_COMMON" default="compile" name="GINAIDA">
+
+  <!-- Project Default Directory -->
+	<property name="src.dir" location="${basedir}\src"/>
+	<property name="lib.dir" location="${basedir}\lib"/>
+	<property name="classes.dir" location="${basedir}\classes"/>
+	<property name="properties.dir" location="${basedir}\conf"/>
+
+	<!-- Project Default Classpath -->
+	<path id="project.classpath">
+		<fileset dir="${lib.dir}">
+      <include name="*.jar"/>
+    </fileset>
+  </path>
+
+  <echo message ="#### SET PROJECT CLASSPATH ####"/>
+
+  <!-- Make Directory -->
+  <target name="init">
+  	<tstamp>
+       <format property="time" pattern="yyyy-MM-dd hh:mm" />
+    </tstamp>
+		<mkdir dir="${basedir}\classes"/>
+  		<mkdir dir="${basedir}\lib"/>
+  </target>
+ 
+  <echo message ="#### COMPILE COMPLETE ####"/>
+
+    <target name="compile" depends="init">
+    <javac destdir="${basedir}\classes" srcdir="${src.dir}" optimize="true" debug="true" source="1.4" deprecation="true">
+      <classpath refid="project.classpath"/>
+    </javac>
+    <jar destfile="${lib.dir}\tn_common-1.0.jar"
+       basedir="${classes.dir}"
+       includes="**">
+      <manifest>
+        <attribute name="Built-By" value="Developer - GINAIDA"/>
+        <attribute name="Jar-Title" value="Common Library of TrustNet"/>
+        <attribute name="Jar-Version" value="1.0.0"/>
+        <attribute name="Jar-Vendor" value="TrustNet co.,ltd"/>
+      </manifest>
+    </jar>
+  </target>
+
+  <echo message ="#### START COMPILE  ####"/>
+
+</project>

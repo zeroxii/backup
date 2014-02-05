@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="javadoc">
+    <target name="javadoc">
+        <javadoc destdir="javadoc" access="public" source="1.4" use="true" notree="false" nonavbar="false" noindex="false" splitindex="true" author="true" version="true" nodeprecatedlist="false" nodeprecated="false" sourcefiles="src/biz/trustnet/common/util/CommonUtil.java" sourcepath="src" classpath="lib/log4j-1.2.14.jar;lib/activation.jar;lib/ojdbc14.jar;lib/mail.jar;lib/jdbcpool-0.99.jar" doctitle="TrustNet Common Library - Version2.0 ">
+            <link href="file:/D:/Develop/eclipse/workspace/TN_COMMON/javadoc/"/>
+        </javadoc>
+    </target>
+</project>

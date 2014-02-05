@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="euc-kr"?>
+
+<trustnet>
+	<entity class="biz.trustnet.common.db.DBConfigBean" name="DEFAULT_DB">
+	    <dbType>MSSQL</dbType>
+	    <poolName>TrustNet</poolName>
+		<jdbcDriver>net.sourceforge.jtds.jdbc.Driver</jdbcDriver>
+		<dbUrl>jdbc:jtds:sqlserver://192.168.10.90:1433/KSNET_FC</dbUrl>
+		<dbUser>KSNET_FC</dbUser>
+		<dbPassword>1111</dbPassword>
+		<connection>10</connection>
+	</entity>
+	<entity class="biz.trustnet.common.daemon.TNDaemonConfigBean" name="DAEMONCONFIG">
+	    <loadClass>CLASSNAME</loadClass>
+	    <interval>10000</interval>
+		<executeLog>Y</executeLog><!--Y,N-->
+	</entity>
+	<entity class="biz.trustnet.common.db.DBConfigBean" name="db2">
+	    <dbType>MSSQL</dbType>
+	    <poolName>jdbc/trustnet</poolName>
+		<jdbcDriver>oracle.jdbc.driver.OracleDriver</jdbcDriver>
+		<dbUrl>jdbc:oracle:thin:@211.115.72.184:1521:KTT</dbUrl>
+		<dbUser>ktt</dbUser>
+		<dbPassword>kttaaaa</dbPassword>
+		<connection>10</connection>
+	</entity>
+	<entity class="biz.trustnet.common.db.DBConfigBean" name="INFORMIX">
+	    <dbType>INFORMIX</dbType>
+	    <poolName>jdbc/trustnet</poolName>
+		<jdbcDriver>com.informix.jdbc.IfxDriver</jdbcDriver>
+		<dbUrl>jdbc:informix-sqli://hostname:portnumber:informixserver=<your_db_server>;DB_LOCALE=ko_KR.57356;CLIENT_LOCALE=ko_KR.57356;SERVER_LOCALE=ko_KR.57356</dbUrl>
+		<!-- DB_LOCALE=kr_kr.949;NEWCODESET=MS949,949,949-->
+		<dbUser>ktt</dbUser>
+		<dbPassword>kttaaaa</dbPassword>
+		<connection>10</connection>
+	</entity>
+	<entity class="biz.trustnet.common.mail.EMailConfigBean" name="EMAIL">
+	    <smtpHost>203.104.99.60</smtpHost>
+	    <smtpPort>25</smtpPort>
+		<sendAuth>Y</sendAuth>
+		<useSSL>N</useSSL>
+		<sslPort>465</sslPort>
+		<mailCharSet>euc-kr</mailCharSet>
+		<defaultUser>ktt</defaultUser>
+		<defaultPass>japan.kttrust.net</defaultPass>
+		<defaultSender>ginaida@ginaida.net</defaultSender>
+		<defaultHost>ginaida.net</defaultHost>
+	</entity>
+	<entity class="biz.trustnet.common.sap.conf.SAPConfigBean" name="SAP">
+	    <client>100</client>
+	    <userId>IF011</userId>
+	    <password>INIT00</password>
+	    <language>EN</language>
+	    <hostName>203.245.84.11</hostName>
+	    <systemNumber>17</systemNumber>
+	</entity>
+	<entity class="biz.trustnet.common.sap.conf.SAPServerConfigBean" name="SAPSERVER">
+	    <trace>0</trace> <!-- Enable/disable RFC trace (1 or 0) -->
+	    <unicode>1</unicode> <!-- Flags whether to connect in unicode mode (1 or 0)  -->
+	    <maxStartupDelay>1</maxStartupDelay> <!-- Maximum server startup delay time in seconds -->
+	    <dsr>1</dsr> <!-- Enable/Disable dsr support (0 or 1) -->
+	    <handleRequestClass></handleRequestClass>
+	    <poolName>SYSTEM_A,SYSTEM_B,SYSTEM_C</poolName> <!--  , -->
+	    <clientPoolName>SYSTEM_A,SYSTEM_B,SYSTEM_C</clientPoolName> <!--  , -->
+	</entity>
+	<entity class="biz.trustnet.common.sap.conf.SAPPoolConfigBean" name="SYSTEM_A">
+	    <poolName>SYSTEM_A</poolName>
+	    <maxConnection>IF011</maxConnection>
+	    <client>100</client>
+	    <userId></userId>
+	    <password></password>
+	    <language>EN</language>
+	    <hostName>203.245.84.11</hostName>
+	    <systemNumber>17</systemNumber>
+	    <gwHost>prd1</gwHost>
+	    <gwService>sapgw00</gwService>
+	    <programId>JCOSERV_IF</programId>
+	</entity>
+
+</trustnet>
